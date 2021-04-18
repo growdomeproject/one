@@ -1,0 +1,23 @@
+name: desktopify
+version: git
+summary: Convert Ubuntu Server for Raspberry Pi to a Desktop.
+description: |
+  Desktopify is a simple script to convert Ubuntu Server for the Raspberry Pi
+  to one of the official Ubuntu desktop flavours.
+
+base: core18
+grade: stable
+confinement: classic
+
+parts:
+  desktopify:
+    plugin: dump
+    source: .
+    prime:
+    - -.github
+    - -LICENSE
+    - README.md
+
+apps:
+  desktopify:
+    command: desktopify
